@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Background Change</title>
+    <style>
+        .btn {
+            cursor: pointer;
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: 2px solid transparent;
+            margin: 5px;
+            background-color:rgb(158, 134, 134);
+        }
+    </style>
+</head>
+<body>
+    <button class="btn" onclick="changebg('red', this)">Red</button>
+    <button class="btn" onclick="changebg('blue', this)">Blue</button>
+    <button class="btn" onclick="changebg('green', this)">Green</button>
+    <button class="btn" onclick="resetbg()">Reset</button>
+
+    <script>
+        function changebg(color, element) {
+            document.body.style.backgroundColor = color;
+            var buttons = document.querySelectorAll('.btn');
+            buttons.forEach(function(btn) {
+                btn.style.backgroundColor = '';
+                btn.style.color = 'white';
+            });
+            element.style.backgroundColor = color;
+            element.style.color = 'black';
+        }
+        function resetbg() {
+            document.body.style.backgroundColor = '';
+            var buttons = document.querySelectorAll('.btn');
+            buttons.forEach(function(btn) {
+                btn.style.backgroundColor = ''; 
+                btn.style.color = 'white';
+            });
+        }
+    </script>
+</body>
+</html>
